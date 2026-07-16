@@ -14,3 +14,11 @@ You are the main thread, responsible for planning, supervision and verification.
 
 === Acceptance criteria (main thread checks each) ===
 <List pass/fail judgement for each item; if any fails, state it and redo that part>
+
+=== Model selection (per sub-task) ===
+<Rate this sub-task's difficulty: simple / medium / hard>
+<Pick the model tier and reasoning mode accordingly; do not default to the strongest model in its strongest mode>
+- simple -> fast/cheap model, minimal or no extended reasoning
+- medium -> mid-tier model, light reasoning
+- hard -> strongest model, high reasoning effort
+<Escalate to a stronger model/mode only if verification fails; record the chosen tier and mode>
