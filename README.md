@@ -58,7 +58,7 @@ subtask-prompt-skill/
 ├── templates/
 │   └── subtask_prompt_template.md    可复用的"委派+看护验证"提示词模板
 └── examples/
-    └── example_fund_analysis.md      基金持仓分析的改造前/后示例
+        └── example_k8s_troubleshooting.md   Kubernetes 故障排查的改造前/后示例
 ```
 
 ---
