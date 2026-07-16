@@ -33,7 +33,8 @@ When the target Agent supports choosing a model or reasoning effort, the main th
 - Simple (lookup, formatting, boilerplate, short summaries): a fast/cheap model, minimal or no extended reasoning
 - Medium (multi-step reasoning, moderate code, structured analysis): a mid-tier model with light reasoning
 - Hard (deep reasoning, tricky debugging, novel design, high-stakes verification): the strongest model with high reasoning effort
-Guidelines:
+
+**Guidelines:**
 - Default to the lowest tier that can plausibly pass the acceptance criteria; scale up, do not scale down
 - Escalate to a stronger model/mode only after a verification failure or when the babysitting note flags insufficient quality
 - The babysitting/verification pass may itself run on a stronger model than the sub-task that produced the output
