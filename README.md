@@ -89,7 +89,7 @@ cd subtask-prompt-skill
 
 ### 快速使用
 
-打开 `templates/subtask_prompt_template.md`，将 `=== GOAL ===` 等占位段替换为你的具体任务即可。可参考 `examples/example_fund_analysis.md` 的改造前/后对照。
+打开 `templates/subtask_prompt_template.md`，将 `=== GOAL ===` 等占位段替换为你的具体任务即可。可参考 `examples/example_k8s_troubleshooting.md` 的改造前/后对照。
 
 ---
 
@@ -122,7 +122,7 @@ Remove-Item -Recurse -Force subtask-prompt-skill
 
 ## 四、版本
 
-- **v1.0.0**：首个版本，包含 Skill 定义、提示词模板、基金分析示例。
+- **v1.0.0**：首个版本，包含 Skill 定义、提示词模板、Kubernetes 故障排查示例。
 
 ## 五、免责声明
 
