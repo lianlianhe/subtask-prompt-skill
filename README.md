@@ -6,6 +6,27 @@
 
 ---
 
+## ⚠️ 使用前提
+
+> **本项目是纯提示词（Prompt）层面的 Skill，不包含任何运行时代码。**
+
+使用本 Skill 需要满足以下前提：
+
+1. **目标 Agent 必须原生支持子 Agent（Sub-agent）能力。**
+   典型的支持示例：[Codex CLI](https://github.com/openai/codex)、[Claude Code](https://docs.anthropic.com/en/docs/claude-code) 等具备"委派子任务线程并异步执行"的 Agent 框架。
+   若所使用的 Agent **不支持**子 Agent，本 Skill 的委派-看护结构将退化为普通串行对话，无法发挥预期效果。
+
+2. **Token 消耗显著高于单次提问。**
+   采用"委派 + 持续攻克 + 看护验证"三段式结构后，每个任务至少涉及：
+   - 主线程初始规划 + 子任务下发
+   - 子线程多轮执行（每轮含上下文回放）
+   - 主线程逐步核查并写 Babysitting note
+
+   实际 Token 消耗通常是一次性提问的 **3～10 倍**，复杂任务可更高。
+   请根据所用模型的计费标准提前评估成本，**不建议在 Token 预算极度受限的场景下使用**。
+
+---
+
 ## 一、产品介绍
 
 **subtask-prompt-skill** 是一个 Prompt 工程 Skill。它把用户常见的"一次性提问式"提示词，自动改写成一种更可靠的三段式结构：
@@ -35,7 +56,7 @@ subtask-prompt-skill/
 ├── README.md                         项目说明（本文）
 ├── SKILL.md                          Skill 定义：用途 / 触发场景 / 核心原则 / 步骤 / 注意事项
 ├── templates/
-│   └── subtask_prompt_template.md    可复用的“委派+看护验证”提示词模板
+│   └── subtask_prompt_template.md    可复用的"委派+看护验证"提示词模板
 └── examples/
     └── example_fund_analysis.md      基金持仓分析的改造前/后示例
 ```
